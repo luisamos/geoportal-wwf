@@ -9,10 +9,9 @@
                 geográficos</a></div>
         <div class="menu-admin--item"> <a id="aServiciosGeograficos"
                 href="<?= base_url() ?>ServiciosGeograficos">Servicios geográficos</a>
-        </div>        
+        </div>
         <hr>
         <div class="menu-admin--item"> <a id="aPortada" href="<?= base_url() ?>portadas">Portada</a></div>
-        <div class="menu-admin--item"> <a id="aNoticias" href="<?= base_url() ?>gnoticias">Noticias</a></div>
         <hr>
         <div class="menu-admin--item" style="text-align: center;"> <a id="acerarsesion" class="active"
                 style="background: #9a0064 !important;" href="<?= base_url() ?>/logout">Cerrar Sesión</a></div>

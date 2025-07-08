@@ -43,33 +43,27 @@ header_body_Public($data);
                     <!-- <svg width="49" height="45" viewBox="0 0 49 45" fill="none">
                     <path d="M32.6667 39.6111L16.3333 34.4533V5.38889L32.6667 10.5467M47.6389 0.5C47.4756 0.5 47.3394 0.5 47.2033 0.5L32.6667 5.63333L16.3333 0.5L0.98 5.14444C0.408333 5.31556 0 5.75556 0 6.31778V43.2778C0 43.6019 0.143403 43.9128 0.39866 44.142C0.653918 44.3712 1.00012 44.5 1.36111 44.5C1.49722 44.5 1.66056 44.5 1.79667 44.4267L16.3333 39.3667L32.6667 44.5L48.02 39.8556C48.5917 39.6111 49 39.2444 49 38.6822V1.72222C49 1.39807 48.8566 1.08719 48.6013 0.857981C48.3461 0.62877 47.9999 0.5 47.6389 0.5Z" fill="#fff"/>
                     </svg> -->
-                    <div class="menu-apps--icon"><img src="<?= media() ?>/public/img/location.png" alt=""
-                            style="width: 54px; height: 60px;"></div>
+                    <div class="menu-apps--icon"><img src="<?= media() ?>/public/img/ubicacion.png" alt=""
+                            style="width: 70px; height: 70px;"></div>
 
                     <div class="item-app--title">Visor</div>
                 </a>
                 <a style="margin-right: 15px; border-radius: 15px;" class="item-app item-app-02"
                     href="https://experience.arcgis.com/experience/d1225f50d78443068ccb330154aeaaf8" target="_blank">
-                    <div class="menu-apps--icon"><img src="<?= media() ?>/public/img/benchmarking.png" alt=""
-                            style="width: 80px; height: 75px;"></div>Indicadores
+                    <div class="menu-apps--icon"><img src="<?= media() ?>/public/img/indicadores.png" alt=""
+                            style="width: 85px; height: 85px;"></div>Indicadores
                 </a>
-                <a style="margin-right: 15px;border-radius: 20px;" class="item-app item-app-03"
-                    href="https://app.powerbi.com/groups/me/reports/0321b9cf-d30c-405a-bb58-9891b2ac7225/b5f810673c480b42d063?ctid=68a878b0-8b0b-4459-ac6c-2082f0e189db&experience=power-bi">
-                    <svg width="49" height="45" viewBox="0 0 49 45" fill="none">
-                        <path
-                            d="M32.6667 39.6111L16.3333 34.4533V5.38889L32.6667 10.5467M47.6389 0.5C47.4756 0.5 47.3394 0.5 47.2033 0.5L32.6667 5.63333L16.3333 0.5L0.98 5.14444C0.408333 5.31556 0 5.75556 0 6.31778V43.2778C0 43.6019 0.143403 43.9128 0.39866 44.142C0.653918 44.3712 1.00012 44.5 1.36111 44.5C1.49722 44.5 1.66056 44.5 1.79667 44.4267L16.3333 39.3667L32.6667 44.5L48.02 39.8556C48.5917 39.6111 49 39.2444 49 38.6822V1.72222C49 1.39807 48.8566 1.08719 48.6013 0.857981C48.3461 0.62877 47.9999 0.5 47.6389 0.5Z"
-                            fill="#fff" />
-                    </svg>
-                    <div class="item-app--title">Repositorio WWF-Perú</div>
+                <a style="margin-right: 15px; border-radius: 15px;" class="item-app item-app-03"
+                    href="https://app.powerbi.com/groups/me/reports/0321b9cf-d30c-405a-bb58-9891b2ac7225/b5f810673c480b42d063?ctid=68a878b0-8b0b-4459-ac6c-2082f0e189db&experience=power-bi"
+                    target="_blank">
+                    <div class="menu-apps--icon"><img src="<?= media() ?>/public/img/repositorio.png" alt=""
+                            style="width: 55px; height: 55px;"></div>Repositorio WWF-Perú
                 </a>
-                <a style="margin-right: 15px;border-radius: 20px;" class="item-app item-app-04"
-                    href="https://wwfperu.sharepoint.com/sites/Gestindelainformacin/_layouts/15/listforms.aspx?cid=N2VkZTZlNmQtYThiNy00YjI0LThiYWYtODk1ZjUwNDBkMjA1&nav=MjQxZGM0NWItMjUzNy00MTQ4LWI2NzUtZTgwMDExOGE4ZmY2">
-                    <svg width="47" height="48" viewBox="0 0 47 48" fill="none">
-                        <path
-                            d="M5.22222 0H41.7778C44.6761 0 47 2.4 47 5.33333V42.6667C47 45.6267 44.6761 48 41.7778 48H5.22222C2.35 48 0 45.6267 0 42.6667V5.33333C0 2.4 2.35 0 5.22222 0ZM13.0556 37.3333H33.9444V32H13.0556V37.3333ZM33.9444 18.6667H27.4167V10.6667H19.5833V18.6667H13.0556L23.5 29.3333L33.9444 18.6667Z"
-                            fill="#fff" />
-                    </svg>
-                    <div class="item-app--title">Solicitudes GIS</div>
+                <a style="margin-right: 15px; border-radius: 15px;" class="item-app item-app-04"
+                    href="https://app.powerbi.com/groups/me/reports/0321b9cf-d30c-405a-bb58-9891b2ac7225/b5f810673c480b42d063?ctid=68a878b0-8b0b-4459-ac6c-2082f0e189db&experience=power-bi"
+                    target="_blank">
+                    <div class="menu-apps--icon"><img src="<?= media() ?>/public/img/solicitudes.png" alt=""
+                            style="width: 75px; height: 75px;"></div>Solicitudes GIS
                 </a>
                 <a style="margin-right: 15px; border-radius: 20px;" class="item-app item-app-05"
                     href="<?= base_url() ?>aplicaciones">
