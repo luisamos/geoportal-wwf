@@ -1,0 +1,547 @@
+
+
+
+html {
+  font-size: 62.5%;
+}
+
+
+.container{
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  &.pad{
+    padding: 20px;
+  }
+  &.xs{
+    max-width: 900px;
+  }
+}
+
+body {
+  font-size: 1.5em;
+  /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;;
+  color: var(--color-text);
+  background-color: #fff;
+  margin: 0;
+  top: 0!important;
+  position: static!important;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+/* Typography
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-family:Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 3.6rem;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 3rem;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 2.4rem;
+  line-height: 1.35;
+  letter-spacing: -0.08rem;
+}
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  letter-spacing: -0.05rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+/* Larger than phablet */
+p {
+  margin-top: 0;
+}
+
+/* Links
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  text-decoration: none;
+  all: unset;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img, iframe{
+  vertical-align: middle;
+  max-width: 100%;
+  border: 0;
+}
+svg{
+  vertical-align: middle;
+}
+/* Buttons
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button, button {
+  /*display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;*/
+  border: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+
+
+.button:hover, button:hover {
+  outline: 0;
+}
+
+
+input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0;
+}
+
+.button.button-primary, button.button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0;
+}
+
+input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0;
+}
+
+.button.button-primary:hover, button.button-primary:hover {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB;
+}
+
+input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB;
+}
+
+.button.button-primary:focus, button.button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB;
+}
+
+input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB;
+}
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"] {
+  height: 34px;
+  padding: 4px 8px;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+/* Forms
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* textarea, select {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+ */
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus {
+  border-color: #cdcdcd;
+  outline: 0;
+}
+
+textarea:focus, select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0;
+}
+
+label, legend {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  display: inline;
+}
+
+label > .label-body {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-weight: normal;
+}
+
+/* Lists
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+  list-style: circle inside;
+}
+
+ol {
+  list-style: decimal inside;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+ul ul, ul ol {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%;
+}
+
+ol ol, ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+/* Code
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+}
+
+/* Tables
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+
+/* Spacing
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button, .button {
+  margin-bottom: 1rem;
+}
+
+input, textarea, select, fieldset {
+  margin-bottom: 1.5rem;
+}
+
+pre, blockquote, dl, table, p, ul, ol, form {
+  margin-bottom: 2.5rem;
+}
+
+figure {
+    margin: 0;
+}
+
+/* Utilities
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.max-full-width {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+/* Misc
+ *–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+      margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-width: 0;
+    border-top: 1px solid #5c5c5c;
+}
+
+.flex{
+  display: flex;
+}
+.between{
+  justify-content: space-between;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-right{
+  justify-content: right;
+}
+.align-center{
+  align-items: center;
+}
+.g-10{
+  gap: 10px;
+}
+.g-15{
+  gap: 15px;
+}
+.g-20{
+  gap: 20px;
+}
+.g-30{
+  gap: 30px;
+}
+
+.mr-bottom-0{
+  margin-bottom: 0;
+}
+.mr-bottom-10{
+  margin-bottom: 10px;
+}
+.mr-bottom-15{
+  margin-bottom: 15px;
+}
+.mr-bottom-20{
+  margin-bottom: 20px;
+}
+.mr-bottom-25{
+  margin-bottom: 25px;
+}
+.mr-bottom-30{
+  margin-bottom: 30px;
+}
+.mr-bottom-35{
+  margin-bottom: 35px;
+}
+.mr-bottom-40{
+  margin-bottom: 40px;
+}
+
+.ads{
+  margin: 0 auto 20px;
+  text-align: center;
+  &.ads-top{
+    min-height: 90px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+.ads-interstitial{
+  margin: 0;
+}
+
+
+.loading-row{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+
+}
+
+
+
+/* body:before{
+  content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(to right, #3150FA, #B4FB00);
+} */
+/* #content {
+    overflow: auto;
+} */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.main-grid{
+  background: var(--color-bg);
+  padding: 20px 15px;
+}
+/* .grid{
+  max-width: 1010px;
+  margin: 0 auto;  
+  &.pad{
+    padding: 20px 15px;
+  }
+}  */
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+
+
+.grid {
+  display: grid;
+  /* grid-template-rows: repeat(6, 1fr); */
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+}
+
+.col {
+  &--12{
+    grid-column: span 12;
+  }
+  &--11 {
+    grid-column: span 11;
+  }
+  &--10 {
+    grid-column: span 10;
+  }
+  &--9 {
+    grid-column: span 9;
+  }
+  &--8 {
+    grid-column: span 8;
+  }
+  &--7 {
+    grid-column: span 7;
+  }
+  &--6 {
+    grid-column: span 6;
+  }
+  &--5 {
+    grid-column: span 5;
+  }
+
+  &--4 {
+    grid-column: span 4;
+  }
+
+  &--3 {
+    grid-column: span 3;
+  }
+
+  &--2 {
+    grid-column: span 2;
+  }
+}
+
+.skiptranslate:not(.goog-te-gadget){
+  display: none!important;
+}
+.language{
+  position: relative;
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+  border: 1px solid #b6b6b66b;
+  border-radius: 5px;
+  width: 53px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.translateContent{
+  position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #0000005c;
+    display: none;
+    overflow: hidden;
+    .goog-te-combo{
+      width: 100%;
+    }
+    &.active{
+      display: block;
+    }
+}

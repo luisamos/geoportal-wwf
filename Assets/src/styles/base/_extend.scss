@@ -1,0 +1,39 @@
+/**
+ * Extend.
+ */
+%scrollbar_onlydesktop {
+  @media (min-width: 1025px) {
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: transparent;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      background-color: transparent;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background-color: #535353;
+
+        &:hover {
+          background-color: #353535;
+        }
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, .13);
+      }
+    }
+  }
+}

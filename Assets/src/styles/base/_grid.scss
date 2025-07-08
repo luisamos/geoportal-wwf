@@ -1,0 +1,164 @@
+.container {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1300px;
+
+}
+.g-5{
+  gap: 5px;
+}
+.g-10{
+  gap: 10px;
+}
+.g-20{
+  gap: 20px;
+}
+.g-30{
+  gap: 30px;
+}
+.grid-news{
+  display: grid;
+  &--cols-2{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &--cols-3{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &--cols-4{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .col--2{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .col--3{
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }.col--4{
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+}
+
+
+.row, .flex {
+  display: flex;
+}
+.justify-between{
+  justify-content: space-between;
+}
+
+.grid {
+  display: flex;
+
+  &--wrap {
+    flex-direction: column;
+  }
+}
+.column {
+  width: 100%;
+  flex-basis: 100%;
+
+  &-fluid {
+    width: 100%;
+  }
+}
+.column-sticky {
+  top: 145px;
+  position: sticky;
+}
+.align-center{
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .m-direction-column{
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+ 
+  .grid-news{
+    .d-col--2{
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+    .d-col--3{
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+    .d-col--4{
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+  }
+  
+    
+  
+  .grid-news{
+    &--dcols-1{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &--dcols-2{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &--dcols-3{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &--dcols-4{
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .container {
+    //width: 100%;
+    //margin: 0 auto;
+    //max-width: 1300px; // Resta 40 del padding 0 20
+
+    &--flex {
+      display: flex;
+      align-items: initial;
+    }
+  }
+  .row {
+    margin: 0 -10px;
+  }
+  .grid {
+    margin: 0 -10px;
+
+    &--wrap {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+  .column {
+    padding: 0 10px;
+
+    &-fluid {
+      width: 100%;
+    }
+
+    &-fixed {
+      width: 300px;
+      flex: 0 0 300px;
+      margin-left: 20px;
+    }
+
+    &--3 {
+      flex-basis: 25%;
+      width: 25%;
+    }
+    &--4 {
+      flex-basis: 33.33%;
+      width: 33.33%;
+    }
+    &--6 {
+      flex-basis: 50%;
+      width: 50%;
+    }
+    &--8 {
+      flex-basis: 66.66%;
+      width: 66.66%;
+    }
+  }
+
+}

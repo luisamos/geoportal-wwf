@@ -1,0 +1,82 @@
+header.header#headerSite
+	.header-inner
+		.top-header.flex.between
+			.start-header.align-center.flex
+				button.button-menu(aria-label="Open menú", onclick="document.body.classList.toggle('menu-open')")
+					i.icon-menu
+			.center-header
+				a.logo-capital(href="/") <svg width="205" height="41" viewBox="0 0 205 41" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_109_2939)"><path d="M4.54579 36.8046C1.51526 34.0033 0 29.8634 0 24.3848V16.5063C0 11.0619 1.51526 6.94968 4.54579 4.1698C7.57632 1.38993 12.0542 0 17.9794 0C23.7858 0 28.2064 1.33869 31.2412 4.01608C34.276 6.69348 35.857 10.6455 35.9843 15.8722V19.5872H18.7944V14.2132C18.7944 13.9924 18.7072 13.7806 18.552 13.6244C18.3967 13.4683 18.1862 13.3806 17.9667 13.3806C17.7472 13.3806 17.5367 13.4683 17.3815 13.6244C17.2262 13.7806 17.139 13.9924 17.139 14.2132V26.633C17.139 26.8539 17.2262 27.0657 17.3815 27.2218C17.5367 27.378 17.7472 27.4657 17.9667 27.4657C18.1862 27.4657 18.3967 27.378 18.552 27.2218C18.7072 27.0657 18.7944 26.8539 18.7944 26.633V21.3999H35.9843V25.1086C35.8315 30.3609 34.2356 34.3279 31.1966 37.0095C28.1576 39.6912 23.7519 41.0341 17.9794 41.0384C12.0542 41.0171 7.57632 39.6058 4.54579 36.8046Z" fill="black"/><path d="M52.7605 36.7469H50.4749L50.3603 40.052H33.7242L42.9241 0.980011H60.2732L69.5048 40.052H52.9006L52.7605 36.7469ZM52.3276 28.1254L51.7864 16.5383H51.2707L50.8123 28.1254H52.3276Z" fill="black"/><path d="M70.1351 0.954379H86.0836C89.2086 0.888013 92.3305 1.19114 95.3853 1.85752C97.6379 2.34988 99.6579 3.59634 101.115 5.39321C102.503 7.14825 103.199 9.69328 103.204 13.0283V19.0108C103.165 22.1664 102.454 24.609 101.071 26.3384C99.675 28.0753 97.7516 29.3038 95.5954 29.8356C92.873 30.4899 90.079 30.7934 87.2805 30.7388H86.7967V40.084H70.1351V0.954379ZM86.5929 20.9067C86.7389 20.9239 86.8868 20.9055 87.0242 20.8531C87.1616 20.8007 87.2844 20.7158 87.3824 20.6057C87.5573 20.2529 87.6322 19.8584 87.5989 19.4655V13.5151C87.6345 13.1069 87.5643 12.6964 87.3951 12.3237C87.2614 12.1251 86.9686 12.0227 86.5102 12.0227H85.9372V20.9067H86.5929Z" fill="black"/><path d="M104.432 0.954376H121.094V40.0264H104.432V0.954376Z" fill="black"/><path d="M127.435 12.8809H122.119V0.954376H149.273V12.8809H144.014V40.084H127.461L127.435 12.8809Z" fill="black"/><path d="M163.96 36.7469H161.675L161.56 40.084H144.924L154.13 1.01202H171.473L180.705 40.084H164.101L163.96 36.7469ZM163.534 28.1254L162.986 16.5383H162.477L162.006 28.1254H163.534Z" fill="black"/><path d="M181.335 0.954376H197.997V28.4649H205V40.084H181.335V0.954376Z" fill="black"/></g><defs><clipPath id="clip0_109_2939"><rect width="205" height="41" fill="white"/></clipPath></defs></svg>
+			
+
+
+			.end-header
+				a.logo-audioplayer(href="https://audioplayer.pe/", target="_blank")
+					img.light-image(src="../img/logo_audioplayer.svg", alt="Audio Player", height="24", width="90")
+					img.dark-image(src="../img/logo_audioplayer-w.svg", alt="Audio Player", height="24", width="90")
+				label.switch-desktop.switch(aria-label="Temas")
+					input.toggle-theme(type="checkbox", checked)
+					span.slider.round
+						i.icon-sun
+
+				.search-box
+					button.search(onclick="fn(this, event, {'method':'searching'})", aria-label="Buscar")
+						i.icon-search
+					.search-form-content
+						form.form-search(action="/buscar", method="POST", onsubmit="fn(this, event, {'method':'search'})")
+							input.search-input#search-input(type="text", name="texto", placeholder="Ingresa tu búsqueda", pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+")
+							button.btn-search-box
+								i.icon-search
+
+.menu-mobile
+	.menu-mobile-inner
+		.close-content
+			label.switch-mobile.switch(aria-label="Temas")
+				input.toggle-theme(type="checkbox", checked)
+				span.slider.round
+					i.icon-sun
+
+			button.button-close(aria-label="close", onclick="document.body.classList.toggle('menu-open')")
+				i.icon-close
+		ul.mobile-menu
+			li.active
+				a.item-m-menu(href="/") INICIO
+			li
+				a.item-m-menu(href="#") MUNDO
+			//li
+				a.item-m-menu(href="#") TENDENCIAS
+			li
+				a.item-m-menu(href="#") DEPORTES
+			//li
+				a.item-m-menu(href="#") ACTUALIDAD
+			li
+				a.item-m-menu(href="#") ENTRETENIMIENTO
+			li
+				a.item-m-menu(href="#") HORÓSCOPO
+			li
+				a.item-m-menu(href="https://audioplayer.pe/", target="_blank")
+					img.light-image(src="../img/logo_audioplayer.svg", target="_blank", loading="lazy", width="112", height="29")
+					img.dark-image(src="../img/logo_audioplayer-w.svg", target="_blank", loading="lazy", width="112", height="29")
+
+		.menu-social
+			.title-social SÍGUENOS
+			ul.social
+				li
+					a.tk(href="#", target="_blank")
+						i.icon-tiktok
+				li
+					a.it(href="#", target="_blank")
+						i.icon-instagram
+				li
+					a.tw(href="#", target="_blank")
+						i.icon-twitter
+				li
+					a.fb(href="#", target="_blank")
+						i.icon-facebook
+				li
+					a.yt(href="#", target="_blank")
+						i.icon-youtube
+	
+
+
+
+

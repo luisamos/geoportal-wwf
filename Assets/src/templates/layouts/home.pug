@@ -1,0 +1,11 @@
+extends base_home
+
+block main
+  include ../components/header
+
+  #content(role='main')
+    block container
+      |content
+
+  include ../components/footer
+  include ../helpers/footer-js-home

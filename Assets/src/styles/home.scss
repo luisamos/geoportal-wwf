@@ -1,0 +1,250 @@
+/*
+  Base
+*/
+
+@import "base/_variables";
+@import "base/_mixins";
+@import "base/_reset";
+@import "base/_extend";
+@import "base/_fonts";
+@import "templates/header";
+@import "templates/general";
+@import "templates/footer";
+
+.splide-container{
+  position: relative;
+}
+.splide__slide img.background-slide {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+}
+
+.splide__arrow{
+  height: 80px;
+    border-radius: 10px;
+    background: #010101;
+    color: #fff;
+    width: 50px;
+  svg{
+    fill: #fff;
+    width: 25px;
+    height: 40px;
+  }
+}
+.container-menu-apps{
+  position: absolute;
+  bottom: -105px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  @media (max-width: 768px) {
+    position: static;
+  }
+}
+.menu-apps{
+  display: flex;
+  background: #eee;
+  pointer-events: all;
+  .item-app{
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 2.6rem;
+    font-family: "WWF","Open Sans","Helvetica Neue",Arial;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s ease;
+    &:hover{
+      transform: scale(1.05);
+    }
+    &.item-app-01{
+      background: $color_dark_brown;
+      &:hover{
+        box-shadow: 0 20px 30px 0 #552f2591;
+      }
+    }
+    &.item-app-02{
+      background: $color_brown;
+      &:hover{
+        box-shadow: 0 20px 30px 0 #9a681c91;
+      }
+    }
+    &.item-app-03{
+      background: $color_blue;
+      &:hover{
+        box-shadow: 0 20px 30px 0 #00728f91;
+      }
+    }
+    &.item-app-04{
+      background: $color_aqua;
+      &:hover{
+        box-shadow: 0 20px 30px 0 #00919191;
+      }
+    }
+    
+  }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    .item-app{
+      flex-basis: 30%;
+      height: 135px;
+      gap: 10px;
+      font-size: 2rem;
+      padding: 10px;
+
+    }
+  }
+
+
+}
+
+.block-inserve{
+  background: #000;
+  color: #fff;
+  padding-top: 150px;
+  margin-bottom: 50px;
+  @media (max-width: 768px) {
+    padding-top: 30px;
+  }
+}
+
+.title-block{
+  margin-bottom: 30px;
+  font-size: 2.7rem;
+  padding-top: 20px;
+  font-family: "WWF","Open Sans","Helvetica Neue",Arial;
+  span{
+    position: relative;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      width: calc(100% + 40px);
+      height: 0;
+      border-bottom: 4px solid #000;
+      top: -20px;
+    }
+  }
+  &.inverse{
+    span{
+      position: relative;
+      &:before{
+        border-color: #fff;     
+      }
+    }
+  }
+}
+
+.card-new{
+  max-width: 100%;
+    background: #000;
+    color: #fff;
+  .cover-card{
+    img{
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+  }
+  .caption-card{
+    padding: 20px;
+  }
+  h2{
+    font-size: 2.6rem;
+    font-weight: 400;
+    margin-bottom: 2px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    text-transform: uppercase;
+  }
+}
+#splideNews{
+  .splide__pagination {
+    bottom: -30px;
+  }
+  .splide__pagination__page {
+    background: #292929;
+  }
+  .splide__pagination__page.is-active {
+    background: #000;
+  }
+
+  .splide__arrow {
+    height: 50px;
+    width: 40px;
+    svg {
+      width: 20px;
+      height: 30px;
+    }
+  }
+  
+}
+
+
+.splide__slide__container > .container{
+  position: relative;
+  .paragraph{
+    position: absolute;
+    left: 0;
+    max-width: 90%;
+    top: 230px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      left: 75px;
+      top: auto;
+
+      bottom: -282px;
+      .title-slide{
+        font-size: 4rem;
+      }
+      .caption-slide{
+        font-weight: 400;
+        font-size: 1.6rem;
+
+      }
+    }
+  }
+  .title-slide{
+    
+    font-family: "WWF","Open Sans","Helvetica Neue",Arial;
+    color: #fff;
+    font-size: 6.6rem;
+    text-transform: uppercase;
+    /* background: #00000040; */
+    /* padding: 0 20px; */
+    margin-bottom: 5px;
+    line-height: 1.2;
+    display: inline-block;
+    text-shadow: 1px 1px 3px #21212178;
+  }
+
+  .caption-slide{
+    color: #fff;
+    max-width: 356px;
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px #21212178;
+  }
+}
+
+
+body.home{
+  background: #EFEEEA;
+}
