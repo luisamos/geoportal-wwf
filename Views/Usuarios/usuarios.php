@@ -34,8 +34,8 @@
         </button>
     </div>
     <div class="row flex g-10 justify-right mr-bottom-10">
-        <button class="btn btn--medium bg-blue" onclick="">
-            🟢Habilitar / 🔴 Inhabilitar
+        <button class="btn btn--medium bg-blue" onclick="habilitarUsuario()">
+            🟢Habilitar / Inhabilitar
         </button>
     </div>
 

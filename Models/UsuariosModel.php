@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 	class UsuariosModel extends PostgreSQL
 	{
 		private $int_Id_usuario;
@@ -8,12 +7,11 @@
 		private $str_Usuari_clave;
 		private $str_Usuari_id_rol;
 		private $int_Usuari_estado;
-		
 
 		public function __construct()
 		{
 			parent::__construct();
-		}	
+		}
 
 		public function insertUsuario(string $id_persona, string $nombre, string $clave, int $id_rol, int $id_usuario){
 
@@ -64,7 +62,7 @@
 		public function selectUsuario(int $id_usuario){
 			$this->int_Id_usuario = $id_usuario;
 			$sql = "SELECT u.id_usuario,u.usuari_nombre, TO_CHAR(u.created, 'dd-Mon-YYYY') as fechaRegistro, u.usuari_id_persona, u.usuari_id_rol, 
-				p.person_nombres, p.person_apellidos, p.person_num_documento  
+				p.person_nombres, p.person_apellidos, p.person_num_documento 
 					FROM usuario u 
 					INNER JOIN persona p 
 					ON u.usuari_id_persona = p.id_persona 
@@ -80,7 +78,7 @@
 			$this->str_Usuari_nombre = $nombre;
 			$this->str_Usuari_clave = $clave;
 			$this->str_Usuari_id_rol = $id_rol;
-			
+
 			if($this->str_Usuari_clave  != "")
 			{
 				$sql = "UPDATE usuario SET usuari_id_persona=?, usuari_nombre=?, usuari_clave=?, usuari_id_rol=?, updated = ?, updated_by = ?
@@ -107,15 +105,15 @@
 			return $request;
 		
 		}
+
 		public function deleteUsuario(int $intId_usuario)
 		{
 			$this->int_Id_usuario = $intId_usuario;
-			$sql = "UPDATE usuario SET usuari_estado = ? WHERE id_usuario = $this->int_Id_usuario ";
+			$sql = "UPDATE usuario SET usuari_estado = ? WHERE id_usuario = $this->int_Id_usuario;";
 			$arrData = array(0);
 			$request = $this->update($sql,$arrData);
 			return $request;
 		}
-
 
 		public function cantDatos(){
 
@@ -131,12 +129,24 @@
 					ON u.usuari_id_persona = p.id_persona 
 					LEFT JOIN rol r 
 					ON u.usuari_id_rol = r.id_rol 
-					
 					ORDER BY id_usuario 
 					DESC LIMIT '$porpagina' OFFSET '$desde'";
 			$request =$request = $this->select_all($sql);
 			return $request;
 		}
 
+		public function habilitar(int $intId_usuario)
+		{
+			$this->int_Id_usuario = $intId_usuario;
+			$sql = "UPDATE public.usuario 
+				SET usuari_estado = CASE 
+					WHEN usuari_estado = 1 THEN 0 
+					ELSE 1 
+				END 
+				WHERE id_usuario = ? RETURNING usuari_estado;";
+			$arrData = array($this->int_Id_usuario);
+			$request = $this->updateOne($sql, $arrData);
+			return $request;
+		}
 	}
  ?>

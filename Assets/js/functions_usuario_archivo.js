@@ -139,7 +139,7 @@ function fntSearchArchivo() {
 function openModalDel() {
     const check = document.querySelector('input[name="ckUsuarioArchivo"]:checked');
     if (!check) {
-        new Toast('Seleccione una Usuario');
+        new Toast('Seleccione un Usuario');
         return;
     }
 

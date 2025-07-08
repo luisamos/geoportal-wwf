@@ -13,22 +13,6 @@ class PostgreSQL extends Conexion
     	$this->conexion = parent::conect();
 	}
 
-	//Insertar un registro.
-	public function insert(string $consultaSQL, array $parametros)
-	{
-		$this->strQuery = $consultaSQL;
-		$this->arrValues = $parametros;
-		$insert = $this->conexion->prepare($this->strQuery);
-		$resInsert = $insert->execute($this->arrValues);
-		if($resInsert)
-		{
-			$lastInsert = $this->conexion->lastInsertId();
-		}else{
-			$lastInsert = 0;
-		}
-		return $lastInsert;
-	}
-
 	//Busca un registro.
 	public function select(string $consultaSQL)
 	{
@@ -60,6 +44,22 @@ class PostgreSQL extends Conexion
 		return $data;
 	}
 
+	//Insertar un registro.
+	public function insert(string $consultaSQL, array $parametros)
+	{
+		$this->strQuery = $consultaSQL;
+		$this->arrValues = $parametros;
+		$insert = $this->conexion->prepare($this->strQuery);
+		$resInsert = $insert->execute($this->arrValues);
+		if($resInsert)
+		{
+			$lastInsert = $this->conexion->lastInsertId();
+		}else{
+			$lastInsert = 0;
+		}
+		return $lastInsert;
+	}
+
 	//Actualiza registros.
 	public function update(string $consultaSQL, array $parametros)
 	{
@@ -70,14 +70,13 @@ class PostgreSQL extends Conexion
 		return $resExecute;
 	}
 
-	//Eliminar un registros.
-	public function delete(string $query)
+	public function updateOne(string $consultaSQL, array $parametros)
 	{
-		$this->strQuery = $query;
-		$delete = $this->conexion->prepare($this->strQuery);
-		$delete->execute();
-
-		return $delete->rowCount();
+		$this->strQuery = $consultaSQL;
+		$this->arrValues = $parametros;
+		$update = $this->conexion->prepare($this->strQuery);
+		$update->execute($this->arrValues);
+		return $update->fetchColumn();
 	}
 
 	public function update_all(string $query, array $data)
@@ -104,6 +103,16 @@ class PostgreSQL extends Conexion
 			$this->conexion->rollBack();
 			return false;
 		}
+	}
+
+	//Eliminar un registros.
+	public function delete(string $query)
+	{
+		$this->strQuery = $query;
+		$delete = $this->conexion->prepare($this->strQuery);
+		$delete->execute();
+
+		return $delete->rowCount();
 	}
 }
 ?>

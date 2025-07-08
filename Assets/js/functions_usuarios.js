@@ -93,7 +93,7 @@ function fntRolesUsuario() {
 function fntEditInfo() {
     const check = document.querySelector('input[name="ckUsuarios"]:checked');
     if (!check) {
-        new Toast('seleccione una Usuario');
+        new Toast('seleccione un Usuario');
         return;
     }
 
@@ -161,7 +161,7 @@ function fntSearchPersona() {
 function openModalDel() {
     const check = document.querySelector('input[name="ckUsuarios"]:checked');
     if (!check) {
-        new Toast('Seleccione una Usuario');
+        new Toast('Seleccione un Usuario');
         return;
     }
 
@@ -173,4 +173,37 @@ function openModal() {
     document.querySelector('#id_usuario').value = "";
     document.querySelector('#titleModal').innerHTML = "Nuevo Usuario";
     document.querySelector("#formUsuarios").reset();
+}
+
+function habilitarUsuario() {
+    const check = document.querySelector('input[name="ckUsuarios"]:checked');
+    if (!check) {
+        new Toast('seleccione un Usuario');
+        return;
+    }
+
+    const id_usuario_hab = check.dataset.id;
+    if (id_usuario_hab != 0) {
+        let ajaxUrl = base_url + '/Usuarios/habilitar/' + id_usuario_hab;
+        let request = (window.XMLHttpRequest) ?
+            new XMLHttpRequest() :
+            new ActiveXObject('Microsoft.XMLHTTP');
+        request.open("GET", ajaxUrl, true);
+        request.send();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+                let objData = JSON.parse(request.responseText);
+                if (objData.status) {
+                    new Toast("Correcto: " + objData.msg);
+                }
+                else {
+                    new Toast("Error: " + objData.msg);
+                }
+
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
+            }
+        }
+    }
 }

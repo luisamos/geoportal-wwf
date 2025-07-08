@@ -1,4 +1,4 @@
-<?php 
+<?php
 class Usuarios extends Controllers{
 
 	public function __construct()
@@ -62,12 +62,12 @@ class Usuarios extends Controllers{
 	}
 
 	public function setUsuario(){
-		if($_POST){			
+		if($_POST){
 			if(empty($_POST['usuario']) ||   empty($_POST['id_persona']) )
 			{
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 			}
-			else{ 
+			else{
 				$intId_persona = intval($_POST['id_persona']);
 				$intId_usuario = intval($_POST['id_usuario']);
 				$strNombre = strtolower(strClean($_POST['usuario']));
@@ -80,11 +80,10 @@ class Usuarios extends Controllers{
 					$strClave =  empty($_POST['clave']) ? hash("SHA256",passGenerator()) : hash("SHA256",$_POST['clave']);
 
 					$request_user = $this->model->insertUsuario($intId_persona,
-																$strNombre, 
+																$strNombre,
 																$strClave,
 																$intId_rol,
 																$_SESSION['idUser']);
-					
 				}
 				else{
 					$option = 2;
@@ -107,7 +106,7 @@ class Usuarios extends Controllers{
 					}
 				}
 				else if($request_user == 'exist'){
-					$arrResponse = array('status' => false, 'msg' => '¡Atención! el Usuario ya existe, ingrese otro.');		
+					$arrResponse = array('status' => false, 'msg' => '¡Atención! el Usuario ya existe, ingrese otro.');
 				}
 				else{
 					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
@@ -137,7 +136,6 @@ class Usuarios extends Controllers{
 			}
 			echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
 		}
-		
 		die();
 	}
 
@@ -150,6 +148,23 @@ class Usuarios extends Controllers{
 				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el usuario');
 			}else{
 				$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el usuario.');
+			}
+			echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+
+	public function habilitar($id_usuario_hab)
+	{
+		if($_GET){
+			$int_Id_usuario = intval($id_usuario_hab);
+			$requestHabilitar = $this->model->habilitar($int_Id_usuario);
+			if($requestHabilitar)
+			{
+				$arrResponse = array('status' => true, 'msg' => 'Se habilitó el usuario');
+			}else
+			{
+				$arrResponse = array('status' => true, 'msg' => 'Se deshabilitó el usuario.');
 			}
 			echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
 		}

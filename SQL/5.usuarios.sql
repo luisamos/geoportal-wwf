@@ -18,3 +18,11 @@ BEFORE UPDATE ON public.usuario
 FOR EACH ROW
 WHEN (OLD.intentos_login IS DISTINCT FROM NEW.intentos_login)
 EXECUTE FUNCTION verificar_intentos_login();
+
+
+UPDATE public.usuario 
+SET usuari_estado = CASE 
+	WHEN usuari_estado = 1 THEN 0 
+	ELSE 1 
+END 
+WHERE id_usuario = 11 RETURNING usuari_estado;
