@@ -15,7 +15,6 @@
                             <div class="main-menu">
                                 <div class="item-nav"><a href="<?= base_url() ?>home">INICIO</a></div>
                                 <div class="item-nav"><a href="#">NOSOTROS </a></div>
-                                <div class="item-nav"><a href="#">NOTICIAS</a></div>
                             </div>
                         </div>
                         <div class="end-header">
