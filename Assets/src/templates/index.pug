@@ -1,0 +1,145 @@
+extends layouts/home
+
+block variables
+  - var pageType = "home"
+  - var pageTitle = "GEOPORTAL WWF"
+  - var x = "home"
+
+block container
+  .splide-container
+    section#splideMain.splide(aria-label='')
+      .splide__track
+        ul.splide__list
+          li.splide__slide
+            .splide__slide__container
+              .container
+                .paragraph
+                  .title-slide NESCIUNT CONSECTETUR 
+                  .caption-slide libero Voluptates obcaecati exercitationem. Nesciunt dignissimos.
+              img.background-slide(src="https://picsum.photos/seed/picsum/1700/675?random=9", alt="")
+          li.splide__slide
+            .splide__slide__container
+              .container
+                .paragraph
+                  .title-slide NESCIUNT CONSECTETUR 
+                  .caption-slide libero Voluptates obcaecati exercitationem. Nesciunt dignissimos.
+              img.background-slide(src="https://picsum.photos/1700/675?random=10", alt="")
+          li.splide__slide
+            .splide__slide__container
+              .container
+                .paragraph
+                  .title-slide NESCIUNT CONSECTETUR 
+                  .caption-slide libero Voluptates obcaecati exercitationem. Nesciunt dignissimos.
+              img.background-slide(src="https://picsum.photos/1700/675?random=11", alt="")
+    .container-menu-apps
+      .menu-apps.container
+        a(href="planoteca.html").item-app.item-app-01
+          <svg width="49" height="45" viewBox="0 0 49 45" fill="none">
+            <path d="M32.6667 39.6111L16.3333 34.4533V5.38889L32.6667 10.5467M47.6389 0.5C47.4756 0.5 47.3394 0.5 47.2033 0.5L32.6667 5.63333L16.3333 0.5L0.98 5.14444C0.408333 5.31556 0 5.75556 0 6.31778V43.2778C0 43.6019 0.143403 43.9128 0.39866 44.142C0.653918 44.3712 1.00012 44.5 1.36111 44.5C1.49722 44.5 1.66056 44.5 1.79667 44.4267L16.3333 39.3667L32.6667 44.5L48.02 39.8556C48.5917 39.6111 49 39.2444 49 38.6822V1.72222C49 1.39807 48.8566 1.08719 48.6013 0.857981C48.3461 0.62877 47.9999 0.5 47.6389 0.5Z" fill="#fff"/>
+          </svg>
+          .item-app--title Planoteca digital
+        a(href="#").item-app.item-app-02
+          <svg width="47" height="48" viewBox="0 0 47 48" fill="none">
+            <path d="M5.22222 0H41.7778C44.6761 0 47 2.4 47 5.33333V42.6667C47 45.6267 44.6761 48 41.7778 48H5.22222C2.35 48 0 45.6267 0 42.6667V5.33333C0 2.4 2.35 0 5.22222 0ZM13.0556 37.3333H33.9444V32H13.0556V37.3333ZM33.9444 18.6667H27.4167V10.6667H19.5833V18.6667H13.0556L23.5 29.3333L33.9444 18.6667Z" fill="#fff"/>
+            </svg>
+          .item-app--title DESCARGA DE<br> INFORMACIÓN
+
+        a(href="#").item-app.item-app-03
+          <svg width="55" height="45" viewBox="0 0 55 45" fill="none">
+            <path d="M29.8489 0.5L35.0216 1.47778L25.1512 44.5L19.9784 43.5222L29.8489 0.5ZM47.5312 22.5L38.0566 13.7244V6.80667L55 22.5L38.0566 38.1689V31.2511L47.5312 22.5ZM0 22.5L16.9434 6.80667V13.7244L7.46881 22.5L16.9434 31.2511V38.1689L0 22.5Z" fill="#fff"/>
+          </svg>
+
+          .item-app--title servicios<br> geográficos
+        a(href="#").item-app.item-app-04
+          <svg width="50" height="45" viewBox="0 0 50 45" fill="none">
+            <path d="M45.4545 0.5H4.54545C2.04545 0.5 0 2.48 0 4.9V40.1C0 42.52 2.04545 44.5 4.54545 44.5H45.4545C47.9545 44.5 50 42.52 50 40.1V4.9C50 2.48 47.9545 0.5 45.4545 0.5ZM22.7273 20.3H18.1818V23.6C18.1818 26.02 16.1364 28 13.6364 28C16.1364 28 18.1818 29.98 18.1818 32.4V35.7H22.7273V40.1H18.1818C15.6818 40.1 13.6364 38.12 13.6364 35.7V34.6C13.6364 32.18 11.5909 30.2 9.09091 30.2V25.8C11.5909 25.8 13.6364 23.82 13.6364 21.4V20.3C13.6364 17.88 15.6818 15.9 18.1818 15.9H22.7273V20.3ZM40.9091 30.2C38.4091 30.2 36.3636 32.18 36.3636 34.6V35.7C36.3636 38.12 34.3182 40.1 31.8182 40.1H27.2727V35.7H31.8182V32.4C31.8182 29.98 33.8636 28 36.3636 28C33.8636 28 31.8182 26.02 31.8182 23.6V20.3H27.2727V15.9H31.8182C34.3182 15.9 36.3636 17.88 36.3636 20.3V21.4C36.3636 23.82 38.4091 25.8 40.9091 25.8V30.2ZM45.4545 11.5H4.54545V4.9H45.4545V11.5Z" fill="#fff"/>
+          </svg>
+          .item-app--title Aplicaciones
+
+  .block-inserve 
+    .container.pad.xs
+      .title-block.inverse
+        span SOBRE NOSOTROS 
+      .mr-bottom-35
+        p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora reprehenderit dicta atque impedit accusamus ad! Sapiente consequatur facere magnam provident iusto molestiae, eum sunt ab in perferendis quibusdam, possimus nobis! 
+  .container.pad
+    .title-block
+        span NOTICIAS 
+    
+    section#splideNews.splide.mr-bottom-40(aria-label='')
+      .splide__track
+        ul.splide__list
+          li.splide__slide
+            .splide__slide__container
+              .card-new 
+                .cover-card 
+                  a(href="#")
+                    img(src="https://picsum.photos/480/270?random=1", alt="")
+                .caption-card 
+                  h2 
+                    a(href="#") Impedit accusamus ad! Sapiente consequatur facere magnam provident iusto molestiae, eum sunt ab in perferendis quibusdam
+          li.splide__slide
+            .splide__slide__container
+              .card-new 
+                .cover-card 
+                  a(href="#")
+                    img(src="https://picsum.photos/480/270?random=2", alt="")
+                .caption-card 
+                  h2 
+                    a(href="#") Impedit accusamus ad! Sapiente consequatur facere magnam provident iusto molestiae, eum sunt ab in perferendis quibusdam
+          li.splide__slide
+            .splide__slide__container
+              .card-new 
+                .cover-card 
+                  a(href="#")
+                    img(src="https://picsum.photos/480/270?random=3", alt="")
+                .caption-card 
+                  h2 
+                    a(href="#") Impedit accusamus ad! Sapiente consequatur facere magnam provident iusto molestiae, eum sunt ab in perferendis quibusdam
+          li.splide__slide
+            .splide__slide__container
+              .card-new 
+                .cover-card 
+                  a(href="#")
+                    img(src="https://picsum.photos/480/270?random=4", alt="")
+                .caption-card 
+                  h2 
+                    a(href="#") Impedit accusamus ad! Sapiente consequatur facere magnam provident iusto molestiae, eum sunt ab in perferendis quibusdam
+          li.splide__slide
+            .splide__slide__container
+              .card-new 
+                .cover-card 
+                  a(href="#")
+                    img(src="https://picsum.photos/480/270?random=5", alt="")
+                .caption-card 
+                  h2 
+                    a(href="#") Impedit accusamus ad! Sapiente consequatur facere magnam provident iusto molestiae, eum sunt ab in perferendis quibusdam
+          li.splide__slide
+            .splide__slide__container
+              .card-new 
+                .cover-card 
+                  a(href="#")
+                    img(src="https://picsum.photos/480/270?random=6", alt="")
+                .caption-card 
+                  h2 
+                    a(href="#") Impedit accusamus ad! Sapiente consequatur facere magnam provident iusto molestiae, eum sunt ab in perferendis quibusdam
+          li.splide__slide
+            .splide__slide__container
+              .card-new 
+                .cover-card 
+                  a(href="#")
+                    img(src="https://picsum.photos/480/270?random=7", alt="")
+                .caption-card 
+                  h2 
+                    a(href="#") Impedit accusamus ad! Sapiente consequatur facere magnam provident iusto molestiae, eum sunt ab in perferendis quibusdam
+          li.splide__slide
+            .splide__slide__container
+              .card-new 
+                .cover-card 
+                  a(href="#")
+                    img(src="https://picsum.photos/480/270?random=8", alt="")
+                .caption-card 
+                  h2 
+                    a(href="#") Impedit accusamus ad! Sapiente consequatur facere magnam provident iusto molestiae, eum sunt ab in perferendis quibusdam
+    .row.text-right.mr-bottom-40
+      a.btn(href="#") VER MÁS NOTICIAS <svg width="15" height="22" viewBox="0 0 15 22" fill="none"><path d="M13.685 12.1068L4.83084 20.9609C4.17981 21.612 3.20325 21.612 2.61731 20.9609L1.11992 19.5287C0.533987 18.8776 0.533987 17.9011 1.11992 17.3151L7.435 11.0652L1.11992 4.75008C0.533987 4.16414 0.533987 3.18758 1.11992 2.53654L2.61731 1.03915C3.20325 0.453218 4.17981 0.453218 4.83084 1.03915L13.685 9.89328C14.2709 10.5443 14.2709 11.5209 13.685 12.1068Z" fill="white"/></svg>

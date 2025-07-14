@@ -1,0 +1,40 @@
+https://geo.serfor.gob.pe/geoservicios/services/Servicios_OGC/Zonificacion_Forestal/MapServer/WMSServer
+
+https://portalgeo.sbn.gob.pe/geosrv/rest/services/sdrc/wms_sinabip_libre/MapServer
+
+{
+    "estado": false,
+    "mensaje": "Error en cURL: Failed connect to portalgeo.sbn.gob.pe:443; Connection timed out"
+}
+
+ogr2ogr -f "ESRI Shapefile" [shp_final_2dim] [shp_original] -dim 2
+
+              total        used        free      shared  buff/cache   available
+Mem:           7.6G        977M        2.8G         43M        3.8G        6.3G
+
+
+https://geo.serfor.gob.pe/geoservicios/services/Servicios_OGC/Ordenamiento_Forestal/MapServer/WMSServer
+
+https://ws.munilince.gob.pe:9094/geoserver/GEOPERU/peru_munilince_013_vias/wms?service=WMS&request=Getcapabilities
+
+https://geoespacial.inei.gob.pe/geoserver/Interoperabilidad/wms?service=WMS&version=1.1.0&request=GetMap&layers=Interoperabilidad%3Aig_centropoblado&bbox=-81.3058853149414%2C-18.3344993591309%2C-68.6593322753906%2C-0.095669999718666&width=532&height=768&srs=EPSG%3A4326&styles=&format=application/openlayers
+
+
+https://geo.serfor.gob.pe/geoservicios/rest/services/Servicios_OGC/Zonificacion_Forestal/MapServer?f=pjson
+
+
+curl -u admin:geoserver -XPUT -H "Content-Type: application/xml" -d "<layer><defaultStyle><name>CEM_2024_CM</name><workspace>geo</workspace></defaultStyle></layer>" http://localhost:8080/geoserver/rest/layers/geo:tg_cem2024
+
+
+"C:\Program Files\GDAL\ogr2ogr.exe" -f PostgreSQL PG:"host=localhost port=5432 dbname=geoportalwwf user=postgres password=123456" "C:/Apps/www/geoportal/Assets/files/uploads/shp/202505301523157577/tmp/lotes_de_contratos_marzo_2025.shp" -nln "geo.tg_lotes_1" -lco GEOMETRY_NAME=geom -lco FID=gid -lco PRECISION=NO -overwrite -progress -nlt PROMOTE_TO_MULTI --config SHAPE_ENCODING "LATIN1" -sql "SELECT CAST("Lote" AS NUMERIC(19,11)) AS "lote", "Ubicación" AS "ubicacion", "Decreto_Su" AS "decretosu", "Contrato" AS "contrato", "Tipo_Contr" AS "tipocontr", "F_Suscripc" AS "fsuscripc", "F_Decreto" AS "fdecreto", "Cia_Oper_1" AS "ciaoper1" FROM lotes_de_contratos_marzo_2025"
+
+
+Lote: String (50.0)
+Ubicaci├│n: String (50.0)
+Decreto_Su: String (20.0)
+Contrato: String (20.0)
+Tipo_Contr: String (20.0)
+F_Suscripc: String (20.0)
+F_Decreto: String (20.0)
+Cia_Oper_1: String (254.0)
+

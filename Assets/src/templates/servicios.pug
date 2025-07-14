@@ -1,0 +1,32 @@
+extends layouts/layers
+
+block variables
+  - var pageType = "app"
+  - var pageTitle = "GEOPORTAL WWF"
+  - var x = "tab"
+
+block container
+  .title-wrap-bg
+    .container.pad
+      .title-app-page.bg-blue
+        | <svg width="55" height="45" viewBox="0 0 55 45" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M29.8488 0.5L35.0216 1.47778L25.1512 44.5L19.9784 43.5222L29.8488 0.5ZM47.5312 22.5L38.0566 13.7244V6.80667L55 22.5L38.0566 38.1689V31.2511L47.5312 22.5ZM0 22.5L16.9434 6.80667V13.7244L7.46881 22.5L16.9434 31.2511V38.1689L0 22.5Z" fill="white"/></svg>
+        | SERVICIOS GRÁFICOS
+  .container.pad    
+    .caption-app-page 
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+    .row
+      .item-service 
+        h3.item-service--title  Servicio de puntos de ubicación de proyectos agroforestales
+        .item-service--copy 
+          input.item-service--input(type="text", readonly, onclick="this.select()", value="https://geoportal.wwf.org/serviciossig/proyectos-forestales/wms")
+          button.btn.btn--regular.bg-orange(onclick="xsl.fn.copy(this)") COPIAR
+      .item-service 
+        h3.item-service--title  Servicio de puntos de ubicación de proyectos agroforestales
+        .item-service--copy 
+          input.item-service--input(type="text", readonly, onclick="this.select()", value="https://geoportal.wwf.org/serviciossig/proyectos-forestales/wms")
+          button.btn.btn--regular.bg-orange(onclick="xsl.fn.copy(this)") COPIAR
+      .item-service 
+        h3.item-service--title  Servicio de puntos de ubicación de proyectos agroforestales
+        .item-service--copy 
+          input.item-service--input(type="text", readonly, onclick="this.select()", value="https://geoportal.wwf.org/serviciossig/proyectos-forestales/wms")
+          button.btn.btn--regular.bg-orange(onclick="xsl.fn.copy(this)") COPIAR

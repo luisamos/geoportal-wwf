@@ -1,0 +1,161 @@
+extends layouts/layers
+
+block variables
+  - var pageType = "admin"
+  - var pageTitle = "GEOPORTAL WWF"
+  - var x = "tab"
+
+block container
+  .title-wrap-bg
+    .container.pad
+      .title-app-page.bg-violet
+        img(src="img/cms.png", alt="", style="width: 45px; height: 42px;")
+        | GESTIÓN DEL GEOPORTAL
+  .container.pad
+    .admin-layer 
+      .menu-admin
+        .menu-admin--list 
+          .menu-admin--item 
+            a(href="gestion-usuarios.html") Gestión de usuarios 
+          .menu-admin--item 
+            a(href="gestion-capas.html") Gestión de capas
+          .menu-admin--item 
+            a(href="gestion-planoteca.html") Gestión de planoteca
+          .menu-admin--item 
+            a(href="gestion-archivos.html") Gestión de archivos 
+          .menu-admin--item 
+            a(href="gestion-portada.html") Gestión de portada
+          .menu-admin--item 
+            a(href="gestion-servicios.html") Gestión de servicios cartográficos 
+          .menu-admin--item 
+            a(href="gestion-noticias.html").active Gestión de noticias  
+      .admin-layer--content
+        .row.flex.g-10.justify-right.mr-bottom-10
+          button.btn.btn--medium.bg-blue
+            .btn--icon <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7871 11.323H17.7871V14.323H20.7871V16.323H17.7871V19.323H15.7871V16.323H12.7871V14.323H15.7871V11.323ZM18.7871 8.323V5.323H2.78711V8.323H18.7871ZM11.7871 10.323V12.003C11.1571 12.953 10.7871 14.093 10.7871 15.323C10.7871 16.413 11.0771 17.443 11.5871 18.323H2.78711C2.25668 18.323 1.74797 18.1123 1.3729 17.7372C0.997823 17.3621 0.787109 16.8534 0.787109 16.323V0.322998L2.45711 1.993L4.11711 0.322998L5.78711 1.993L7.45711 0.322998L9.11711 1.993L10.7871 0.322998L12.4571 1.993L14.1171 0.322998L15.7871 1.993L17.4571 0.322998L19.1171 1.993L20.7871 0.322998V10.823C19.7171 9.903 18.3171 9.323 16.7871 9.323C15.5571 9.323 14.4171 9.693 13.4671 10.323H11.7871ZM9.78711 16.323V10.323H2.78711V16.323H9.78711Z" fill="white"/></svg>
+
+            | Nueva noticia
+          button.btn.btn--medium.bg-blue 
+            .btn--icon <svg width="16" height="18" viewBox="0 0 16 18" fill="none"><path d="M5 0V1H0V3H1V16C1 16.5304 1.21071 17.0391 1.58579 17.4142C1.96086 17.7893 2.46957 18 3 18H13C13.5304 18 14.0391 17.7893 14.4142 17.4142C14.7893 17.0391 15 16.5304 15 16V3H16V1H11V0H5ZM5 5H7V14H5V5ZM9 5H11V14H9V5Z" fill="white"/></svg>
+
+            | Archivas noticia
+        .list-article-news 
+          .article-new
+            .article-new--cover
+              .selected-article 
+                label
+                  input(type="radio", name="articles")
+                  span &nbsp;
+              a(href="#") 
+                img(src="https://picsum.photos/480/270?random=1", alt="")
+            .article-new--caption 
+              .article-new--title 
+                a(href="#") Oficina de Bill Gates preguntaba a candidatas sobre relaciones extramaritales o si “bailaron por dólares”
+          .article-new
+            .article-new--cover
+              .selected-article 
+                label
+                  input(type="radio", name="articles")
+                  span &nbsp;
+              a(href="#")
+                img(src="https://picsum.photos/480/270?random=2", alt="")
+            .article-new--caption 
+              .article-new--title
+                a(href="#")  Juan Pablo Varillas debutará en Wimbledon ante el italiano Lorenzo Musetti
+          .article-new
+            .article-new--cover
+              .selected-article 
+                label
+                  input(type="radio", name="articles")
+                  span &nbsp;
+              a(href="#")
+                img(src="https://picsum.photos/480/270?random=3", alt="")
+            .article-new--caption 
+              .article-new--title
+                a(href="#") La chaqueta que Michael Jordan usó en Barcelona 1992 fue vendida en 1,5 millones de dólares
+          .article-new
+            .article-new--cover
+              .selected-article 
+                label
+                  input(type="radio", name="articles")
+                  span &nbsp;
+              a(href="#")
+                img(src="https://picsum.photos/480/270?random=4", alt="")
+            .article-new--caption 
+              .article-new--title
+                a(href="#") La chaqueta que Michael Jordan usó en Barcelona 1992 fue vendida en 1,5 millones de dólares
+          .article-new
+            .article-new--cover
+              .selected-article 
+                label
+                  input(type="radio", name="articles")
+                  span &nbsp;
+              a(href="#") 
+                img(src="https://picsum.photos/480/270?random=1", alt="")
+            .article-new--caption 
+              .article-new--title 
+                a(href="#") Oficina de Bill Gates preguntaba a candidatas sobre relaciones extramaritales o si “bailaron por dólares”
+          .article-new
+            .article-new--cover
+              .selected-article 
+                label
+                  input(type="radio", name="articles")
+                  span &nbsp;
+              a(href="#")
+                img(src="https://picsum.photos/480/270?random=2", alt="")
+            .article-new--caption 
+              .article-new--title
+                a(href="#")  Juan Pablo Varillas debutará en Wimbledon ante el italiano Lorenzo Musetti
+          .article-new
+            .article-new--cover
+              .selected-article 
+                label
+                  input(type="radio", name="articles")
+                  span &nbsp;
+              a(href="#")
+                img(src="https://picsum.photos/480/270?random=3", alt="")
+            .article-new--caption 
+              .article-new--title
+                a(href="#") La chaqueta que Michael Jordan usó en Barcelona 1992 fue vendida en 1,5 millones de dólares
+          .article-new
+            .article-new--cover
+              .selected-article 
+                label
+                  input(type="radio", name="articles")
+                  span &nbsp;
+              a(href="#")
+                img(src="https://picsum.photos/480/270?random=4", alt="")
+            .article-new--caption 
+              .article-new--title
+                a(href="#") Se viene la 8va edición de Ultra Trail Cordillera Blanca: la Ultramaratón en las montañas de Huaraz
+          .article-new
+            .article-new--cover
+              .selected-article 
+                label
+                  input(type="radio", name="articles")
+                  span &nbsp;
+              a(href="#") 
+                img(src="https://picsum.photos/480/270?random=1", alt="")
+            .article-new--caption 
+              .article-new--title 
+                a(href="#") Oficina de Bill Gates preguntaba a candidatas sobre relaciones extramaritales o si “bailaron por dólares”
+        .pagination-datatable
+          ul.pagination
+            li
+              a(href='#') <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M9.5 11L6.5 8L9.5 5" stroke="#868FA0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            li
+              a(href='#') 1
+            li
+              a.active(href='#') 2
+            li
+              a(href='#') 3
+            li
+              a(href='#') 4
+            li
+              a(href='#') 5
+            li
+              a(href='#') 6
+            li
+              a(href='#') 7
+            li
+              a(href='#') <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6.5 11L9.5 8L6.5 5" stroke="#464F60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>

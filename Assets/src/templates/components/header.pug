@@ -1,0 +1,24 @@
+header.header#headerSite
+	.container
+		.header-inner
+			.top-header.flex.between
+				.start-header.align-center.flex
+					.logo-wwf
+						a(href="/index.html")
+							img(src="img/wwf-logo.svg", alt="")
+					.slogan-wwf GEOPORTAL WWF
+					.main-menu
+						.item-nav
+							a(href="/index.html") INICIO
+						.item-nav
+							a(href="#") NOSOTROS 
+						.item-nav
+							a(href="#") NOTICIAS
+					
+				.end-header
+					.menu-mobile(onclick="xsl.fn.toggle({data: {'to':'.main-menu', 'class':'active'}})")
+						| <svg width="26" height="18" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.595215 0.185547H18.5952V2.18555H0.595215V0.185547ZM0.595215 5.18555H18.5952V7.18555H0.595215V5.18555ZM0.595215 10.1855H18.5952V12.1855H0.595215V10.1855Z" fill="black"/></svg>
+
+					.language
+						span(onclick="toogleTranslate(event, this);")
+							img(src="img/global.svg", width="30", height="31", alt="")

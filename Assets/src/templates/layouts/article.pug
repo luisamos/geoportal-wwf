@@ -1,0 +1,18 @@
+extends base
+
+block main
+  include ../components/header-simple
+
+  
+  #content(role='main')
+    .ads-laterales
+      .ads-lateral-left
+      .ads-lateral-right
+    include ../components/ads-top
+    .grid.main-grid
+      block container
+        |content
+    block related
+
+    include ../components/footer
+  include ../helpers/footer-js

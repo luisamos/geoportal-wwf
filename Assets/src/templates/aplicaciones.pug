@@ -1,0 +1,39 @@
+extends layouts/layers
+
+block variables
+  - var pageType = "app"
+  - var pageTitle = "GEOPORTAL WWF"
+  - var x = "tab"
+
+block container
+  .title-wrap-bg
+    .container.pad
+      .title-app-page.bg-aqua
+        | <svg width="44" height="40" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 0H4C1.8 0 0 1.8 0 4V36C0 38.2 1.8 40 4 40H40C42.2 40 44 38.2 44 36V4C44 1.8 42.2 0 40 0ZM20 18H16V21C16 23.2 14.2 25 12 25C14.2 25 16 26.8 16 29V32H20V36H16C13.8 36 12 34.2 12 32V31C12 28.8 10.2 27 8 27V23C10.2 23 12 21.2 12 19V18C12 15.8 13.8 14 16 14H20V18ZM36 27C33.8 27 32 28.8 32 31V32C32 34.2 30.2 36 28 36H24V32H28V29C28 26.8 29.8 25 32 25C29.8 25 28 23.2 28 21V18H24V14H28C30.2 14 32 15.8 32 18V19C32 21.2 33.8 23 36 23V27ZM40 10H4V4H40V10Z" fill="white"/></svg>
+        | APLICACIONES
+  .container.pad
+    .menu-apps
+      a.menu-apps--item.bg-green(href="#", target="_blank")
+        .menu-apps--icon
+          img(src="img/trazapp.png", alt="")
+        | TrazApp 
+      a.menu-apps--item.bg-medium_green(href="#", target="_blank")
+        .menu-apps--icon
+          img(src="img/location.png", alt="", style="width: 74px; height: 80px;")
+
+        | Visor 
+      
+      a.menu-apps--item.bg-base(href="#", target="_blank")
+        .menu-apps--icon 
+          img(src="img/benchmarking.png", alt="", style="height: 85px; width: 84")
+
+        
+        | Seguimiento de indicadores 
+      
+      a.menu-apps--item.bg-violet(href="#", target="_blank")
+        
+        .menu-apps--icon
+          img(src="img/cms.png", alt="", style="width: 80px; height: 75px;") 
+        | Gestión de portal 
+      
+      

@@ -1,0 +1,102 @@
+extends layouts/map
+
+block variables
+  - var pageType = "map"
+  - var pageTitle = "GEOPORTAL WWF"
+  - var x = "tab, dragable"
+
+block container
+  .map-container
+    .toolbar     
+      button.btn-toolbar(onclick="fn(this, event, {method:'toggle', to:'#window--layers'})")
+        img(src="img/layers.png", alt="")
+      button.btn-toolbar(onclick="fn(this, event, {method:'toggle', to:'#window--chart'})")
+        img(src="img/char.png", alt="")
+      button.btn-toolbar(onclick="fn(this, event, {method:'toggle', to:'#window--ubicacion'})")      
+        img(src="img/marque.png", alt="")
+    .search-tools 
+      .row 
+        .flex.g-20.align-center
+          .label-search Buscar proyectos 
+           
+          input.input-search(type="text", placeholder="Buscar")
+      .row 
+        .flex.g-20.align-center
+          .label-search Filtros            
+          select.input-search
+            option(value="1") opcion 01
+            option(value="2") opcion 02
+            option(value="3") opcion 03
+            option(value="4") opcion 04
+    .window.draggable.active#window--layers(style="width:200px; left: 20px; bottom: 20px;")
+      .window--inner
+        .window--header Cartografía
+          .window--close(onclick="fn(this, event, {method:'toggle', to:'#window--layers'})") <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z" fill="#182233"/></svg>
+        .window-body
+          .layers-list 
+            .item-layer
+              label
+                input(type="checkbox", name="")
+                | Capas 01
+            .item-layer
+              label
+                input(type="checkbox", name="", checked)
+                | Capas 01
+            .item-layer
+              label
+                input(type="checkbox", name="", checked)
+                | Capas 01
+            .item-layer
+              label
+                input(type="checkbox", name="", checked)
+                | Capas 01
+            .item-layer
+              label
+                input(type="checkbox", name="")
+                | Capas 01
+            .item-layer
+              label
+                input(type="checkbox", name="")
+                | Capas 01
+            
+             
+    .window.draggable#window--ubicacion(style="width:400px; right: 30px; top: 40%")
+      .window--inner
+        .window--header Ubicación
+          .window--close(onclick="fn(this, event, {method:'toggle', to:'#window--ubicacion'})") <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z" fill="#182233"/></svg>
+        .window-body
+          .tabs
+            .x-tab.ccenter(role='tablist' aria-label='')
+              button#tab-lastnews-1(role='tab' aria-selected='true' aria-controls='panel--1' tabindex='0' onclick='xsl.ui.tab(this, event)')
+                span Punto referencia
+              button#tab-lastnews-2(role='tab' aria-selected='false' aria-controls='panel--2' tabindex='0' onclick='xsl.ui.tab(this, event)')
+                span Shape
+          #panel--1(role='tabpanel' tabindex='0' aria-labelledby='tab-lastnews-2')
+            .row.justify-center.mr-bottom-15.flex
+              .flex.g-20.align-center
+                .label-search(style="width: 100px;") Latitud:           
+                input.input-search.mr-bottom-0(type="text", placeholder="0")
+            .row.justify-center.mr-bottom-15.flex
+              .flex.g-20.align-center
+                .label-search(style="width: 100px;")  Longitud:        
+                input.input-search.mr-bottom-0(type="text", placeholder="0")
+            .row.justify-center
+              .flex.align-center.justify-center
+                button.btn.btn--regular.bg-blue Buscar
+          #panel--2(role='tabpanel' tabindex='0' aria-labelledby='tab-lastnews-2' hidden='')
+            .mr-bottom-20
+              label.custom-file-upload(for='file-upload')
+                | Seleccionar archivo
+              input#file-upload(type='file')
+            .text-center
+              button.btn.btn--small.bg-blue Subir shape
+    .window.w-bottom-flip#window--chart()
+      .window--inner
+        .window--header Estadísticos
+          .window--close(onclick="fn(this, event, {method:'toggle', to:'#window--chart'})") <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z" fill="#182233"/></svg>
+        .window-body
+          img(src="tmp/grouped-column-chart-reference-small.png", alt="", height="270")
+          img(src="tmp/grouped-column-chart-reference-small.png", alt="", height="270")
+    .info-cords X: 133038282700 | Y: 1345454650050
+    #map(style="background-image: url(tmp/12.jpg); background-size:cover")
+      

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Portada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #editableImage {
+            max-width: 100%;
+        }
+
+        .modal-lg {
+            max-width: 90%;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+
+    <h3>Mi portada</h3>
+    <div class="mb-3">
+        <img id="portada" src="Assets/imagenes/portada.jpg" class="img-fluid"
+            style="max-height: 300px; border: 1px solid #ccc;">
+    </div>
+    <button id="editarBtn" class="btn btn-primary">Editar portada</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cropperModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Recortar imagen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="editableImage" src="Assets/imagenes/portada.jpg">
+                </div>
+                <div class="modal-footer">
+                    <button id="recortarBtn" class="btn btn-success">Recortar y guardar</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="canvas" style="display: none;"></canvas>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script>
+        let cropper;
+        const portada = document.getElementById('portada');
+        const editableImage = document.getElementById('editableImage');
+        const modalEl = document.getElementById('cropperModal');
+        const modal = new bootstrap.Modal(modalEl);
+
+        document.getElementById('editarBtn').addEventListener('click', () => {
+            // Reiniciar cropper cada vez que abre
+            editableImage.src = 'Assets/imagenes/portada.jpg?' + new Date().getTime(); // evitar cache
+            modal.show();
+            modalEl.addEventListener('shown.bs.modal', () => {
+                if (cropper) cropper.destroy();
+                cropper = new Cropper(editableImage, {
+                    aspectRatio: 1520 / 600,
+                    viewMode: 2,
+                    autoCropArea: 1.0,
+                    responsive: true,
+                    zoomable: true
+                });
+            }, { once: true });
+        });
+
+        document.getElementById('recortarBtn').addEventListener('click', () => {
+            const croppedCanvas = cropper.getCroppedCanvas({
+                width: 1520,
+                height: 600,
+                imageSmoothingQuality: 'high'
+            });
+
+            croppedCanvas.toBlob(function (blob) {
+                const formData = new FormData();
+                formData.append('image', blob, 'portada_actual.jpg');
+
+                fetch('upload.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(res => res.text())
+                    .then(data => {
+                        alert(data);
+                        modal.hide();
+                        // Refrescar imagen portada
+                        portada.src = 'Assets/imagenes/portada_actual.jpg?' + new Date().getTime();
+                    })
+                    .catch(err => console.error(err));
+            }, 'image/jpeg', 1.0);
+        });
+    </script>
+
+</body>
+
+</html>
