@@ -85,16 +85,24 @@
 
     function uploadImage(array $data, string $name){
         $url_temp = $data['tmp_name'];
-        $destino    = '/var/www/html/Assets/images/uploads/'.$name;
+        if (PHP_OS_FAMILY === "Windows") {
+            $destino = 'C:/Apps/www/geoportal-wwf/Assets/images/uploads/'.$name;
+        }
+        else if(PHP_OS_FAMILY === "Darwin") {
+            $destino = '/private/apps/www/geoportal-wwf/Assets/images/uploads/'.$name;
+        }
+        else {
+            $destino = '/var/www/html/Assets/images/uploads/'.$name;
+        }
 
         // Verificar si el directorio de destino existe
-        if (!file_exists('/var/www/html/Assets/files/uploads')) {
-            return "El directorio de destino no existe";
-        }
+        //if (!file_exists('/var/www/html/Assets/files/uploads')) {
+        //    return "El directorio de destino no existe";
+        //}
 
         // Intentar mover el archivo al directorio de destino
         if (move_uploaded_file($url_temp, $destino)) {
-            return true; // �xito al mover el archivo
+            return true; // Exito al mover el archivo
         }
         else {
             return "Error al mover la imagen al directorio de destino";

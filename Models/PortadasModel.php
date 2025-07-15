@@ -117,12 +117,11 @@
 			$this->str_Portad_imagen = $imagen;
 
 			$sql = "UPDATE portada SET portad_imagen = ?, updated = ?,
-					updated_by = ? WHERE id_portada = $this->int_Id_portada;";
-				$arrData = array($this->str_Portad_titulo,
-								$this->str_Portad_descripcion,
-								$this->str_Portad_imagen,
+					updated_by = ? WHERE id_portada = ?;";
+				$arrData = array($this->str_Portad_imagen,
 								date("Y-m-d H:i:s"),
-								$id_usuario);
+								$id_usuario,
+								$this->int_Id_portada);
 				$request = $this->update($sql,$arrData);
 		    return $request;
 		}

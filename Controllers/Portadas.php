@@ -189,7 +189,7 @@ class Portadas extends Controllers{
 
 				$intId_portada = intval($_POST['id_portada']);
 
-				$foto   	 	= $_FILES['foto'];
+				$foto   	 	= $_FILES['imagen'];
 				$nombre_foto 	= $foto['name'];
 				$type 		 	= $foto['type'];
 				$url_temp    	= $foto['tmp_name'];

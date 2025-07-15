@@ -111,6 +111,49 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    if (document.querySelector("#formRecortarPortada")) {
+        let formRecortarPortada = document.querySelector("#formRecortarPortada");
+        formRecortarPortada.onsubmit = function (e) {
+            e.preventDefault();
+
+            if (!cropper) return;
+
+            const canvas = cropper.getCroppedCanvas({
+                width: 1500,
+                height: 600
+            });
+
+            const context = canvas.getContext('2d');
+            context.imageSmoothingEnabled = true;
+            context.imageSmoothingQuality = 'high';
+
+            canvas.toBlob(function (blob) {
+                const formData = new FormData();
+                const id_portada_recortar = formRecortarPortada.querySelector("#id_portada_recortar").value;
+
+                formData.append('id_portada', id_portada_recortar);
+                formData.append('imagen', blob, 'portada.jpg');
+                let ajaxUrl = base_url + '/Portadas/setActualizarPortada';
+
+                fetch(ajaxUrl, {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.status) {
+                            new Toast(data.msg);
+                            Fancybox.close();
+                        } else {
+                            new Toast("Error:" + data.msg);
+                        }
+                    })
+                    .catch(err => console.error("Error en fetch:", err));
+            }, 'image/png', 1.0);
+
+        }
+    }
+
 }, false);
 
 function fntEditInfo() {
@@ -191,7 +234,7 @@ let cropper;
 function recortarPortada() {
     document.querySelector('#id_portada').value = "";
     document.querySelector('#titleModalRecortar').innerHTML = "Recortar Portada";
-    document.getElementById('imgCrop').src = '../../../Assets/images/portada.jpg?' + new Date().getTime();
+
     const check = document.querySelector('input[name="ckPortada"]:checked');
     if (!check) {
         new Toast('Seleccione una Portada');
@@ -199,6 +242,7 @@ function recortarPortada() {
     }
 
     document.getElementById('id_portada_recortar').value = check.dataset.id;
+    document.getElementById('imgCrop').src = check.dataset.portada;
 
     Fancybox.show([{
         src: "#modalFormRecortarPortada",
@@ -209,7 +253,7 @@ function recortarPortada() {
                 const image = document.getElementById('imgCrop');
                 if (cropper) cropper.destroy();
                 cropper = new Cropper(image, {
-                    aspectRatio: 1520 / 600,
+                    aspectRatio: 1.8 / 1,
                     viewMode: 2,
                     autoCropArea: 1.0
                 });

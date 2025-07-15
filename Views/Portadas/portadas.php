@@ -64,8 +64,8 @@
                         <td>
                             <div class="selected-article">
                                 <label>
-                                    <input type="radio" name="ckPortada"
-                                        data-id="<?=$arrRegistros[$p]['id_portada']?>"><span>&nbsp;</span>
+                                    <input type="radio" name="ckPortada" data-id="<?=$arrRegistros[$p]['id_portada']?>"
+                                        data-portada="<?=$arrRegistros[$p]['portad_imagen']?>"><span>&nbsp;</span>
                                 </label>
                             </div>
                         </td>
